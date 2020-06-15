@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+  --ash-gray: hsla(97, 6%, 82%, 1);
+  --dark-sea-green: hsla(133, 22%, 66%, 1);
+  --hookers-green: hsla(165, 32%, 47%, 1);
+  --dark-slate-gray: hsla(186, 35%, 32%, 1);
+  --charcoal: hsla(201, 33%, 27%, 1);
+
+  font-family: 'Press Start 2P', cursive;
+  background-color: var(--dark-sea-green);
+  color: var(--charcoal);
+  font-size: 16px;
+}
+
+h1 {
+  text-align: center;
+}
