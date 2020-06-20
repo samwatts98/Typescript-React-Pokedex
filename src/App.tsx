@@ -22,11 +22,13 @@ const App: React.FC = () => {
 
   const renderPokemon = async (pokemonUrl : string) : Promise<PokemonData> => {
     const result : PokemonData = await fetchData(pokemonUrl).then((data) => {
+      console.log(data);
       const pokemonData : PokemonData = {
         name: data.name,
         number: data.id,
-        types: data.types.map((type : any) => type.type.name),
+        types: data.types.map((entry : any) => entry.type.name),
         spriteUrl: data.sprites.front_default,
+        stats: data.stats.map((entry : any) => ({ name: entry.stat.name, value: entry.base_stat, effort: entry.effort })),
       };
       return pokemonData;
     });
@@ -46,7 +48,7 @@ const App: React.FC = () => {
     <div className="App">
       <h1>Pokédex</h1>
       <PokeCardContainer>
-        {pokemon.map((item) => <PokemonCard name={item.name} key={item.number} spriteUrl={item.spriteUrl} types={item.types} number={item.number} />)}
+        {pokemon.map((item) => <PokemonCard name={item.name} key={item.number} spriteUrl={item.spriteUrl} types={item.types} number={item.number} stats={item.stats} />)}
       </PokeCardContainer>
     </div>
   );

@@ -3,6 +3,13 @@ export interface PokemonData {
   types: [string],
   spriteUrl: string,
   number: number,
+  stats: [PokemonStats]
+}
+
+export interface PokemonStats {
+  name: string,
+  value: number,
+  effort: number,
 }
 
 export interface RawPokemonData {
